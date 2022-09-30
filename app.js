@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/", cards, users);
 
 app.get("/", (req, res) => {
-  res.status(404).send("Frontend ainda não conectado.");
+  res.status(404).send({ message: "Frontend ainda não conectado." });
 });
 
 app.get("*", (req, res) => {

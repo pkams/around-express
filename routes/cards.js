@@ -1,12 +1,18 @@
 const router = require("express").Router();
 const path = require("path");
-const fs = require("fs");
+const fs = require("fs").promises;
 
 const filepath = path.join(__dirname, "../data/cards.json");
-const cards = JSON.parse(fs.readFileSync(filepath, "utf8"));
 
 router.get("/cards", (req, res) => {
-  res.send(cards);
+  fs.readFile(filepath, { encoding: "utf8" })
+    .then((data) => {
+      const cards = JSON.parse(data);
+      res.send(cards);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 module.exports = router;
