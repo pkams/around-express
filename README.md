@@ -1,18 +1,13 @@
-# Around the U.S. Back End  
-  
-## Directories  
-  
-`/data` — JSON files to temporarily emulate database integration.  
-  
-`/routes` — routing files.  
-  
-All other directories are optional and may be created by the developer if necessary.   
-  
-## Running the Project  
-  
-`npm run start` — to launch the server.  
-  
-`npm run dev` — to launch the server with the hot reload feature.  
+# Around the U.S. Back End
 
+## Diretórios
 
+`/data` — Arquivos JSON para emular temporariamente a integração do banco de dados.
 
+`/routes` — Arquivos de roteamento.
+
+## Executando o projeto
+
+`npm run start` — para iniciar o servidor.
+
+`npm run dev` — para iniciar o servidor com o recurso de "hot reload".
