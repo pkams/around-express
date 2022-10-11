@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
     required: true,
     validate: {
       validator: function (v) {
-        const regexText = /[^(http://|https://)w{1,3}.?(w*|d*|W)*#?]/;
+        const regexText = /^(http:\/\/|https:\/\/)w{0,3}.?(w*|d*|W)*#?/;
         return regexText.test(v);
       },
       message: (props) => `${props.value} is not a valid link!`,
