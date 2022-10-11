@@ -1,7 +1,7 @@
+const mongoose = require("mongoose");
 const express = require("express");
 const cards = require("./routes/cards"); // importando o roteador
 const users = require("./routes/users"); // importando o roteador
-const mongoose = require("mongoose");
 
 // conecte ao servidor MongoDB
 mongoose.connect("mongodb://localhost:27017/aroundb");

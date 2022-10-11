@@ -18,7 +18,7 @@ module.exports.getUsersById = (req, res) => {
     })
     .then((user) => res.send({ data: user }))
     .catch((err) => {
-      if (err.statusCode == 404) {
+      if (err.statusCode === 404) {
         const ERROR_CODE = 404;
         res
           .status(ERROR_CODE)
@@ -36,7 +36,7 @@ module.exports.createUser = (req, res) => {
   User.create({ name, about, avatar })
     .then((user) => res.send({ data: user }))
     .catch((err) => {
-      if (err.name == "ValidationError") {
+      if (err.name === "ValidationError") {
         const ERROR_CODE = 400;
         res.status(ERROR_CODE).send({
           message:
@@ -58,7 +58,7 @@ module.exports.updateUser = (req, res) => {
   )
     .then((user) => res.send({ data: user }))
     .catch((err) => {
-      if (err.name == "ValidationError") {
+      if (err.name === "ValidationError") {
         const ERROR_CODE = 400;
         res.status(ERROR_CODE).send({
           message:
@@ -80,7 +80,7 @@ module.exports.updateAvatar = (req, res) => {
   )
     .then((user) => res.send({ data: user }))
     .catch((err) => {
-      if (err.name == "ValidationError") {
+      if (err.name === "ValidationError") {
         res.status(400).send({
           message:
             "Dados inválidos passados aos métodos para criar um cartão/usuário",

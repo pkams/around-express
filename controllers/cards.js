@@ -16,7 +16,7 @@ module.exports.createCard = (req, res) => {
   Card.create({ name, link, owner })
     .then((user) => res.send({ data: user }))
     .catch((err) => {
-      if (err.name == "ValidationError") {
+      if (err.name === "ValidationError") {
         const ERROR_CODE = 400;
         res.status(ERROR_CODE).send({
           message:
@@ -38,7 +38,7 @@ module.exports.deleteCard = (req, res) => {
     })
     .then((user) => res.send({ data: user }))
     .catch((err) => {
-      if (err.statusCode == 404) {
+      if (err.statusCode === 404) {
         const ERROR_CODE = 404;
         res
           .status(ERROR_CODE)
@@ -63,7 +63,7 @@ module.exports.likeCard = (req, res) => {
     })
     .then((user) => res.send({ data: user }))
     .catch((err) => {
-      if (err.statusCode == 404) {
+      if (err.statusCode === 404) {
         const ERROR_CODE = 404;
         res
           .status(ERROR_CODE)
@@ -88,7 +88,7 @@ module.exports.dislikeCard = (req, res) => {
     })
     .then((user) => res.send({ data: user }))
     .catch((err) => {
-      if (err.statusCode == 404) {
+      if (err.statusCode === 404) {
         const ERROR_CODE = 404;
         res
           .status(ERROR_CODE)
